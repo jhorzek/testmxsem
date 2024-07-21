@@ -1,0 +1,25 @@
+Package: testmxsem
+Type: Package
+Title: Tests for mxsem
+Version: 0.1.0
+Authors@R: c(person(given   = "Jannik H.", family = "Orzek",
+                    role    = c("aut", "cre", "cph"),
+                    email   = "jannik.orzek@mailbox.org",
+                    comment = c(ORCID = "0000-0002-3123-2248")))
+Maintainer: Jannik H. Orzek <jannik.orzek@mailbox.org>
+Description: Provides a testing infrastructure for mxsem.
+License: GPL (>= 3)
+Depends: mxsem,
+         OpenMx
+Imports: 
+  Rcpp (>= 1.0.10), 
+  dplyr
+Suggests: 
+    testthat (>= 3.0.0),
+    lavaan,
+    knitr,
+    rmarkdown
+RoxygenNote: 7.3.1
+Encoding: UTF-8
+Config/testthat/edition: 3
+URL: https://jhorzek.github.io/mxsem/
