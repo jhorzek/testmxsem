@@ -2,11 +2,12 @@ test_that("Testing MNLFA from ", {
   # The following is copied directly from Laura Kolbe, Terrence D. Jorgensen, Suzanne Jak, and Dylan Molenaar
   # at https://osf.io/527zr
 
+  set.seed(123)
+
   ### Laura Kolbe
   ### Last updated: 22 February 2022
   ### MNLFA in OpenMx with mokken::DS14 data.
   ### Supplementary material
-
 
 
   ## -------------------------------

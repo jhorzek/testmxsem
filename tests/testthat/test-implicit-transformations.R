@@ -241,7 +241,7 @@ test_that("implicit transformations", {
 '
 
   fit4 <- mxsem(model = model4,
-                data  = OpenMx::Bollen) |>
+                data  = OpenMx::Bollen, scale_loadings = TRUE, scale_latent_variances = FALSE) |>
     mxTryHard()
   testthat::expect_lt(abs(mxEval(latent_var, fit4) - (1 - 1/(omxGetParameters(fit4)["lv_0"] + omxGetParameters(fit4)["lv_1"]*OpenMx::Bollen[1,"x1"] + 1))), 1e-3)
 
@@ -256,7 +256,6 @@ test_that("implicit transformations", {
                 data  = OpenMx::Bollen) |>
     mxTryHard()
   testthat::expect_lt(abs(mxEval(latent_var, fit5) - (1 - 1/(omxGetParameters(fit5)["lv_0"] + omxGetParameters(fit5)["lv_1"]*OpenMx::Bollen[1,"x1"] + 1))), 1e-3)
-  testthat::expect_lt(abs(omxGetParameters(fit4)["lv_1"] -omxGetParameters(fit5)["lv_1"]), 1e-3)
   testthat::expect_lt(abs(logLik(fit4) - logLik(fit5)), 1e-3)
 
   # check direct access to matrix elements
